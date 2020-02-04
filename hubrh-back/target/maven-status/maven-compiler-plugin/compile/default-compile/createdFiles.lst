@@ -1,0 +1,9 @@
+fr\onepoint\hubrh\controller\CollaborateurController.class
+fr\onepoint\hubrh\Application.class
+fr\onepoint\hubrh\model\Collaborateur.class
+fr\onepoint\hubrh\dto\CollaborateurDto.class
+fr\onepoint\hubrh\dto\CollaborateurMapper.class
+fr\onepoint\hubrh\dto\CollaborateurMapperImpl.class
+fr\onepoint\hubrh\repository\CollaborateurRepository.class
+fr\onepoint\hubrh\service\ICollaborateurService.class
+fr\onepoint\hubrh\service\CollaborateurService.class
