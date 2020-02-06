@@ -17,26 +17,26 @@ public class Collaborateur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	@Column
-	private String nom;
-	@Column
-	private String prenom;
-	@Column
-	private String mail;
-	@Column
+
+	@Column(name = "name")
+	private String name;
+	@Column(name = "first_name")
+	private String firstname;
+	@Column(name = "email")
+	private String email;
+	@Column(name = "cv")
 	private String cv;
-	@Column
-	private String commentaire;
-	@Column(name = "is_prestataire")
-	private boolean isPrestataire;
-	@Column(name = "date_entree_op")
-	private Date dateEntreeOp;
-	@Column(name = "date_sortie_op")
-	private Date dateSortieOp;
-	@Column(name = "fk_id_statut")
-	private Integer fkIdStatut;
-	@Column(name = "deleted")
-	private boolean Deleted;
+	@Column(name = "comment")
+	private String comment;
+	@Column(name = "is_provider")
+	private boolean isProvider;
+	@Column(name ="arrival_date_op")
+	private Date arrivalDateOp;
+	@Column(name ="left_date_op")
+	private Date leftDateOp;
+	@Column(name ="fk_id_status")
+	private Integer fkIdStatus;
+	@Column(name ="deleted")
+	private boolean deleted;
 
 }

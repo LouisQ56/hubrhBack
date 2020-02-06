@@ -1,8 +1,8 @@
-C:\Users\l.questel\eclipse-workspace\hubrh-back\src\main\java\fr\onepoint\hubrh\dto\CollaborateurMapper.java
-C:\Users\l.questel\eclipse-workspace\hubrh-back\src\main\java\fr\onepoint\hubrh\repository\CollaborateurRepository.java
-C:\Users\l.questel\eclipse-workspace\hubrh-back\src\main\java\fr\onepoint\hubrh\Application.java
-C:\Users\l.questel\eclipse-workspace\hubrh-back\src\main\java\fr\onepoint\hubrh\service\CollaborateurService.java
-C:\Users\l.questel\eclipse-workspace\hubrh-back\src\main\java\fr\onepoint\hubrh\controller\CollaborateurController.java
-C:\Users\l.questel\eclipse-workspace\hubrh-back\src\main\java\fr\onepoint\hubrh\service\ICollaborateurService.java
-C:\Users\l.questel\eclipse-workspace\hubrh-back\src\main\java\fr\onepoint\hubrh\model\Collaborateur.java
-C:\Users\l.questel\eclipse-workspace\hubrh-back\src\main\java\fr\onepoint\hubrh\dto\CollaborateurDto.java
+C:\Users\l.questel\Git\hubrh-back\src\main\java\fr\onepoint\hubrh\controller\CollaborateurController.java
+C:\Users\l.questel\Git\hubrh-back\src\main\java\fr\onepoint\hubrh\Application.java
+C:\Users\l.questel\Git\hubrh-back\src\main\java\fr\onepoint\hubrh\dto\CollaborateurMapper.java
+C:\Users\l.questel\Git\hubrh-back\src\main\java\fr\onepoint\hubrh\model\Collaborateur.java
+C:\Users\l.questel\Git\hubrh-back\src\main\java\fr\onepoint\hubrh\dto\CollaborateurDto.java
+C:\Users\l.questel\Git\hubrh-back\src\main\java\fr\onepoint\hubrh\repository\CollaborateurRepository.java
+C:\Users\l.questel\Git\hubrh-back\src\main\java\fr\onepoint\hubrh\service\ICollaborateurService.java
+C:\Users\l.questel\Git\hubrh-back\src\main\java\fr\onepoint\hubrh\service\CollaborateurService.java

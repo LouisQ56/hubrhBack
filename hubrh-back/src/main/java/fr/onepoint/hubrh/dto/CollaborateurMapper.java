@@ -13,9 +13,6 @@ import fr.onepoint.hubrh.model.Collaborateur;
 public interface CollaborateurMapper {
 
 	@Mapping(target = "id")
-	@Mapping(source = "nom", target = "name")
-	@Mapping(source = "prenom", target = "firstname")
-	@Mapping(source = "mail", target = "email")
 	CollaborateurDto to(Collaborateur collaborateur);
 
 	List<CollaborateurDto> to(List<Collaborateur> collaborateur);

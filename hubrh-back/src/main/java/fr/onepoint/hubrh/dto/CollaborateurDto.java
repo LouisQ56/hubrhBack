@@ -13,12 +13,12 @@ public class CollaborateurDto {
 	private String name;
 	private String firstname;
 	private String email;
-	private String commentaire;
+	private String comment;
 	private String cv;
-	private boolean isPrestataire;
-	private Date dateEntreeOp;
-	private Date dateSortieOp;
-	private Integer fkIdStatut;
-	private boolean isDeleted;
+	private boolean isProvider;
+	private Date arrivalDateOp;
+	private Date leftDateOp;
+	private Integer fkIdStatus;
+	private boolean deleted;
 
 }

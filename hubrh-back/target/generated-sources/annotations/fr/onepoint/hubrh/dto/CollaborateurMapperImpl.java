@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-02-04T13:18:49+0100",
+    date = "2020-02-06T09:55:23+0100",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 1.8.0_241 (Oracle Corporation)"
 )
 @Component
@@ -22,16 +22,16 @@ public class CollaborateurMapperImpl implements CollaborateurMapper {
 
         CollaborateurDto collaborateurDto = new CollaborateurDto();
 
-        collaborateurDto.setName( collaborateur.getNom() );
-        collaborateurDto.setFirstname( collaborateur.getPrenom() );
-        collaborateurDto.setEmail( collaborateur.getMail() );
         collaborateurDto.setId( collaborateur.getId() );
-        collaborateurDto.setCommentaire( collaborateur.getCommentaire() );
+        collaborateurDto.setName( collaborateur.getName() );
+        collaborateurDto.setFirstname( collaborateur.getFirstname() );
+        collaborateurDto.setEmail( collaborateur.getEmail() );
+        collaborateurDto.setComment( collaborateur.getComment() );
         collaborateurDto.setCv( collaborateur.getCv() );
-        collaborateurDto.setPrestataire( collaborateur.isPrestataire() );
-        collaborateurDto.setDateEntreeOp( collaborateur.getDateEntreeOp() );
-        collaborateurDto.setDateSortieOp( collaborateur.getDateSortieOp() );
-        collaborateurDto.setFkIdStatut( collaborateur.getFkIdStatut() );
+        collaborateurDto.setProvider( collaborateur.isProvider() );
+        collaborateurDto.setArrivalDateOp( collaborateur.getArrivalDateOp() );
+        collaborateurDto.setLeftDateOp( collaborateur.getLeftDateOp() );
+        collaborateurDto.setFkIdStatus( collaborateur.getFkIdStatus() );
         collaborateurDto.setDeleted( collaborateur.isDeleted() );
 
         return collaborateurDto;
@@ -59,15 +59,15 @@ public class CollaborateurMapperImpl implements CollaborateurMapper {
 
         Collaborateur collaborateur1 = new Collaborateur();
 
-        collaborateur1.setMail( collaborateur.getEmail() );
-        collaborateur1.setNom( collaborateur.getName() );
-        collaborateur1.setPrenom( collaborateur.getFirstname() );
+        collaborateur1.setName( collaborateur.getName() );
+        collaborateur1.setFirstname( collaborateur.getFirstname() );
+        collaborateur1.setEmail( collaborateur.getEmail() );
         collaborateur1.setCv( collaborateur.getCv() );
-        collaborateur1.setCommentaire( collaborateur.getCommentaire() );
-        collaborateur1.setPrestataire( collaborateur.isPrestataire() );
-        collaborateur1.setDateEntreeOp( collaborateur.getDateEntreeOp() );
-        collaborateur1.setDateSortieOp( collaborateur.getDateSortieOp() );
-        collaborateur1.setFkIdStatut( collaborateur.getFkIdStatut() );
+        collaborateur1.setComment( collaborateur.getComment() );
+        collaborateur1.setProvider( collaborateur.isProvider() );
+        collaborateur1.setArrivalDateOp( collaborateur.getArrivalDateOp() );
+        collaborateur1.setLeftDateOp( collaborateur.getLeftDateOp() );
+        collaborateur1.setFkIdStatus( collaborateur.getFkIdStatus() );
         collaborateur1.setDeleted( collaborateur.isDeleted() );
 
         return collaborateur1;
