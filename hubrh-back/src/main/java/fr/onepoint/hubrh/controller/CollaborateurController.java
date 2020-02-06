@@ -7,9 +7,12 @@ import javax.xml.ws.soap.Addressing;
 
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +22,7 @@ import fr.onepoint.hubrh.dto.CollaborateurMapper;
 import fr.onepoint.hubrh.model.Collaborateur;
 import fr.onepoint.hubrh.service.CollaborateurService;
 
+
 @RestController
 @RequestMapping("collaborateurs")
 public class CollaborateurController {
@@ -27,11 +31,21 @@ public class CollaborateurController {
 	private CollaborateurService service;
 
 	@GetMapping
+	@Transactional
+	@Modifying
 	public List<CollaborateurDto> findAll() {
+		service.addCollaborateur(1000, "truc", "muche", "truc@muche.fr", new Date(2131), new Date(2131), "blabla", true, 45, "hghghghghg", false);
 		CollaborateurMapper mapper = Mappers.getMapper(CollaborateurMapper.class);
 		List<Collaborateur> collaborateurs = service.findAll();
 		return mapper.to(collaborateurs);
 	}
+	
+	// retourne 1 si le changement à bien été éffectué dans la bdd 0 sinon
+		@PostMapping(path = "/bigChange")
+		public String bigChange(@RequestBody /*Collaborateur collab*/ String tt) {
+			System.out.println("TEST DE QUALIIITE");
+			return "TEST DE QUALIIITE";
+		}
 
 	// retourne 1 si le changement à bien été éffectué dans la bdd 0 sinon
 	@GetMapping(path = "/{change}_{column}_{id}")

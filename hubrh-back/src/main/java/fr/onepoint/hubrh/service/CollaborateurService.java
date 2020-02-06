@@ -5,6 +5,9 @@ import fr.onepoint.hubrh.repository.CollaborateurRepository;
 
 import java.sql.Date;
 import java.util.List;
+
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import lombok.var;
@@ -14,6 +17,11 @@ public class CollaborateurService implements ICollaborateurService {
 
 	@Autowired
 	private CollaborateurRepository repository;
+	
+	protected EntityManager em;
+    public CollaborateurService(EntityManager em) {
+        this.em = em;
+    }
 
 	public List<Collaborateur> findAll() {
 		return (List<Collaborateur>) repository.findAll();
@@ -58,5 +66,11 @@ public class CollaborateurService implements ICollaborateurService {
 	public int setFixedDeleted(boolean change, int id) {
 		return repository.setFixedDeleted(change, id);
 	}
+	
+	public void addCollaborateur(int id, String nom, String prenom, String mail, Date dateEntreeOp, Date dateSortieOp, String cv, boolean isPrestataire, int idStatut, String commentaire, boolean deleted) {
+        em.createNativeQuery("insert into collaborateur( name, first_name, email, arrival_date_op, left_date_op, cv, is_provider, fk_id_status, comment, deleted)"+" values( ?1, ?2,?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)")
+        .setParameter(1, nom).setParameter(2, prenom).setParameter(3, mail).setParameter(4, dateEntreeOp).setParameter(5, dateSortieOp).setParameter(6, cv).setParameter(7, isPrestataire).setParameter(8, idStatut).setParameter(9, commentaire).setParameter(10, deleted)
+        .executeUpdate();
+    }
 
 }
