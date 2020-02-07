@@ -13,7 +13,7 @@ public interface ICollaborateurService {
 
 	List<Collaborateur> findAll();
 	int update(int id, String name, String firstname, String email, Date arrivalDateOp, Date leftDateOp,
-			 String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted);
+			 String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted, int fkIdRole);
 	int setFixedName(String change, int id);
 	int setFixedFirstname(String change, int id);
 	int setFixedEmail(String change, int id);
@@ -24,7 +24,8 @@ public interface ICollaborateurService {
 	int setFixedLeftDateOp(Date change, int id);
 	int setFixedFkIdStatus(int change, int id);
 	int setFixedDeleted(boolean change, int id);
+	int setFixedFkIdRole(int change, int id);
 	
-	public int addCollaborateur(int id, String nom, String prenom, String mail, Date dateEntreeOp, Date dateSortieOp, String cv, boolean isPrestataire, int idStatut, String commentaire, boolean deleted);
+	public int addCollaborateur(int id, String nom, String prenom, String mail, Date dateEntreeOp, Date dateSortieOp, String cv, boolean isPrestataire, int idStatut, String commentaire, boolean deleted, int idRole);
 
 }

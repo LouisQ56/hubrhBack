@@ -44,13 +44,13 @@ public class CollaborateurController {
 	@PostMapping(path = "/insertRequest")
 	public int insertRequest(@RequestBody Collaborateur collab) {
 		return service.addCollaborateur(collab.getId()+10000, collab.getName(), collab.getFirstname(), collab.getEmail(),collab.getArrivalDateOp(),
-				collab.getLeftDateOp(), collab.getCv(), collab.isProvider(), collab.getFkIdStatus(), collab.getComment(), collab.isDeleted());
+				collab.getLeftDateOp(), collab.getCv(), collab.isProvider(), collab.getFkIdStatus(), collab.getComment(), collab.isDeleted(), collab.getFkIdRole());
 	}
 	
 	// retourne 1 si le changement à bien été éffectué dans la bdd 0 sinon
 	@PostMapping(path = "/updateRequest")
 	public int updateRequest(@RequestBody Collaborateur collab) {
 		return service.update(collab.getId(), collab.getName(), collab.getFirstname(), collab.getEmail(),collab.getArrivalDateOp(),
-				collab.getLeftDateOp(), collab.getCv(), collab.isProvider(), collab.getFkIdStatus(), collab.getComment(), collab.isDeleted());
+				collab.getLeftDateOp(), collab.getCv(), collab.isProvider(), collab.getFkIdStatus(), collab.getComment(), collab.isDeleted(), collab.getFkIdRole());
 	}
 }

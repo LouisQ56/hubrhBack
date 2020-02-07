@@ -27,9 +27,9 @@ public class CollaborateurService implements ICollaborateurService {
     }
     
 	 public int  update(int id, String name, String firstname, String email, Date arrivalDateOp, Date leftDateOp,
-			 String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted)  {
+			 String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted, int fkIdRole)  {
 		 return repository.update(id, name, firstname, email, arrivalDateOp, leftDateOp, cv, isProvider, fkIdStatus,
-				 comment, deleted);
+				 comment, deleted, fkIdRole);
 	 }
 
 	public List<Collaborateur> findAll() {
@@ -76,11 +76,15 @@ public class CollaborateurService implements ICollaborateurService {
 		return repository.setFixedDeleted(change, id);
 	}
 	
+	public int setFixedFkIdRole(int change, int id) {
+		return repository.setFixedFkIdRole(change, id);
+	}
+	
 	@Modifying
 	@Transactional
-	public int addCollaborateur(int id, String nom, String prenom, String mail, Date dateEntreeOp, Date dateSortieOp, String cv, boolean isPrestataire, int idStatut, String commentaire, boolean deleted) { return
-        em.createNativeQuery("insert into collaborateur( name, first_name, email, arrival_date_op, left_date_op, cv, is_provider, fk_id_status, comment, deleted)"+" values( ?1, ?2,?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)")
-        .setParameter(1, nom).setParameter(2, prenom).setParameter(3, mail).setParameter(4, dateEntreeOp).setParameter(5, dateSortieOp).setParameter(6, cv).setParameter(7, isPrestataire).setParameter(8, idStatut).setParameter(9, commentaire).setParameter(10, deleted)
+	public int addCollaborateur(int id, String nom, String prenom, String mail, Date dateEntreeOp, Date dateSortieOp, String cv, boolean isPrestataire, int idStatut, String commentaire, boolean deleted, int idRole) { return
+        em.createNativeQuery("insert into collaborateur( name, first_name, email, arrival_date_op, left_date_op, cv, is_provider, fk_id_status, comment, deleted, fk_id_role)"+" values( ?1, ?2,?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)")
+        .setParameter(1, nom).setParameter(2, prenom).setParameter(3, mail).setParameter(4, dateEntreeOp).setParameter(5, dateSortieOp).setParameter(6, cv).setParameter(7, isPrestataire).setParameter(8, idStatut).setParameter(9, commentaire).setParameter(10, deleted).setParameter(11, idRole)
         .executeUpdate();
     }
 

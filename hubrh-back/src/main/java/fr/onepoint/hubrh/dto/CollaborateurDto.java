@@ -20,5 +20,6 @@ public class CollaborateurDto {
 	private Date leftDateOp;
 	private Integer fkIdStatus;
 	private boolean deleted;
+	private Integer fkIdRole;
 
 }
