@@ -41,29 +41,30 @@ public class CollaborateurController {
 	}
 	
 	// retourne 1 si le changement à bien été éffectué dans la bdd 0 sinon
-		@PostMapping(path = "/insertRequest")
-		public String bigChange(@RequestBody Collaborateur collab) {	
-			service.addCollaborateur(collab.getId()+10000, collab.getName(), collab.getFirstname(), collab.getEmail(),collab.getArrivalDateOp(),
-					collab.getLeftDateOp(), collab.getCv(), collab.isProvider(), collab.getFkIdStatus(), collab.getComment(), collab.isDeleted());
-			return "TEST DE QUALIIITE";
-		}
+	@PostMapping(path = "/insertRequest")
+	public int insertRequest(@RequestBody Collaborateur collab) {
+		return service.addCollaborateur(collab.getId()+10000, collab.getName(), collab.getFirstname(), collab.getEmail(),collab.getArrivalDateOp(),
+				collab.getLeftDateOp(), collab.getCv(), collab.isProvider(), collab.getFkIdStatus(), collab.getComment(), collab.isDeleted());
+	}
 
 	// retourne 1 si le changement à bien été éffectué dans la bdd 0 sinon
-	@GetMapping(path = "/{change}_{column}_{id}")
-	public String update(@PathVariable String change, @PathVariable String column, @PathVariable int id) {
-
+	@PostMapping(path = "/{updateRequest")
+	public int updateRequest(@RequestBody Collaborateur collab) {
+		return service.update(collab.getId(), collab.getName(), collab.getFirstname(), collab.getEmail(),collab.getArrivalDateOp(),
+				collab.getLeftDateOp(), collab.getCv(), collab.isProvider(), collab.getFkIdStatus(), collab.getComment(), collab.isDeleted());
+/*
 		switch (column) {
 		case "setFixedName":
-			return "name : " + service.setFixedName(change, id);
+			return service.setFixedName(change, id);
 		case "setFixedFirstname":
-			return "FirstName : " + service.setFixedFirstname(change, id);
+			return service.setFixedFirstname(change, id);
 		case "setFixedEmail":
-			return "name : " + service.setFixedEmail(change, id);
+			return service.setFixedEmail(change, id);
 		case "setFixedComment":
-			return "name : " + service.setFixedComment(change, id);
+			return service.setFixedComment(change, id);
 		default:
-			return "Error";
-		}
+			return 0;
+		}*/
 	}
 /*
 	// column est une date

@@ -12,6 +12,8 @@ import fr.onepoint.hubrh.model.Collaborateur;
 public interface ICollaborateurService {
 
 	List<Collaborateur> findAll();
+	int update(int id, String name, String firstname, String email, Date arrivalDateOp, Date leftDateOp,
+			 String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted);
 	int setFixedName(String change, int id);
 	int setFixedFirstname(String change, int id);
 	int setFixedEmail(String change, int id);

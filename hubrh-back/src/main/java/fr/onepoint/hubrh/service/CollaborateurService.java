@@ -25,6 +25,13 @@ public class CollaborateurService implements ICollaborateurService {
     public CollaborateurService(EntityManager em) {
         this.em = em;
     }
+    
+	 public int  update(int id, String name, String firstname, String email, Date arrivalDateOp, Date leftDateOp,
+			 String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted)  {
+		 return repository.update(id, name, firstname, email, arrivalDateOp, leftDateOp, cv, isProvider, fkIdStatus,
+				 comment, deleted);
+	 }
+
 
 	public List<Collaborateur> findAll() {
 		return (List<Collaborateur>) repository.findAll();

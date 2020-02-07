@@ -21,6 +21,11 @@ public interface CollaborateurRepository extends JpaRepository<Collaborateur, Lo
 	
 	@Modifying
 	@Transactional
+	@Query("update collaborateur u set u.name = ?2, u.firstname = ?3, u.email = ?4, u.arrivalDateOp = ?5, u.leftDateOp = ?6, u.cv = ?7, u.isProvider = ?8, u.fkIdStatus = ?9, u.comment = ?10, u.deleted = ?11 where u.id = ?1")
+	int update(int id, String name, String firstname, String email, Date arrivalDateOp, Date leftDateOp, String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted);
+	
+	@Modifying
+	@Transactional
 	@Query("update collaborateur u set u.name = ?1 where u.id = ?2")
 	int setFixedName(String change, int id);
 	
