@@ -27,9 +27,9 @@ public class CollaborateurService implements ICollaborateurService {
     }
     
 	 public int  update(int id, String name, String firstname, String email, Date arrivalDateOp, Date leftDateOp,
-			 String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted)  {
+			 String cv, boolean isProvider, int fkIdStatus, String comment, boolean deleted, int fkIdRole)  {
 		 return repository.update(id, name, firstname, email, arrivalDateOp, leftDateOp, cv, isProvider, fkIdStatus,
-				 comment, deleted);
+				 comment, deleted, fkIdRole);
 	 }
 
 
