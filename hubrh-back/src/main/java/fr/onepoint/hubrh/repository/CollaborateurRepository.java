@@ -73,5 +73,10 @@ public interface CollaborateurRepository extends JpaRepository<Collaborateur, Lo
 	@Transactional
 	@Query("update collaborateur u set u.deleted = ?1 where u.id = ?2")
 	int setFixedDeleted(boolean change, int id);
+	
+	@Modifying
+	@Transactional
+	@Query("update collaborateur u set u.fkIdRole = ?1 where u.id = ?2")
+	int setFixedFkIdRole(int change, int id);
     
 }

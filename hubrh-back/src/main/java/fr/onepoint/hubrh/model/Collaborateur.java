@@ -38,5 +38,7 @@ public class Collaborateur {
 	private Integer fkIdStatus;
 	@Column(name ="deleted")
 	private boolean deleted;
+	@Column(name ="fk_id_role")
+	private Integer fkIdRole;
 
 }
