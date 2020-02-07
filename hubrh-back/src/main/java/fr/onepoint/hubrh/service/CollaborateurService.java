@@ -32,7 +32,6 @@ public class CollaborateurService implements ICollaborateurService {
 				 comment, deleted);
 	 }
 
-
 	public List<Collaborateur> findAll() {
 		return (List<Collaborateur>) repository.findAll();
 	}
@@ -72,7 +71,7 @@ public class CollaborateurService implements ICollaborateurService {
 	public int setFixedFkIdStatus(int change, int id) {
 		return repository.setFixedFkIdStatus(change, id);
 	}
-
+	// Salut les amis je suis ingénieur informaticien, j'aime tout particulièrement : Linux.
 	public int setFixedDeleted(boolean change, int id) {
 		return repository.setFixedDeleted(change, id);
 	}
