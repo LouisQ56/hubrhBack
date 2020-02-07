@@ -23,6 +23,6 @@ public interface ICollaborateurService {
 	int setFixedFkIdStatus(int change, int id);
 	int setFixedDeleted(boolean change, int id);
 	
-	public void addCollaborateur(int id, String nom, String prenom, String mail, Date dateEntreeOp, Date dateSortieOp, String cv, boolean isPrestataire, int idStatut, String commentaire, boolean deleted);
+	public int addCollaborateur(int id, String nom, String prenom, String mail, Date dateEntreeOp, Date dateSortieOp, String cv, boolean isPrestataire, int idStatut, String commentaire, boolean deleted);
 
 }

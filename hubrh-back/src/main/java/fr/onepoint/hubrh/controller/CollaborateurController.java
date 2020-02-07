@@ -35,29 +35,14 @@ public class CollaborateurController {
 	@Transactional
 	@Modifying
 	public List<CollaborateurDto> findAll() {
-		//service.addCollaborateur(1000, "truc", "muche", "truc@muche.fr", new Date(2131), new Date(2131), "blabla", true, 45, "hghghghghg", false);
 		CollaborateurMapper mapper = Mappers.getMapper(CollaborateurMapper.class);
 		List<Collaborateur> collaborateurs = service.findAll();
 		return mapper.to(collaborateurs);
 	}
 	
 	// retourne 1 si le changement à bien été éffectué dans la bdd 0 sinon
-		@PostMapping(path = "/bigChange")
-		public String bigChange(@RequestBody Collaborateur collab) {
-			System.out.println("TEST DE QUALIIITE");
-			System.out.println(collab.getId());
-			System.out.println(collab.getName());
-			System.out.println(collab.getFirstname());
-			System.out.println(collab.getComment());
-			System.out.println(collab.getEmail());
-
-			System.out.println(collab.getCv());
-			System.out.println(collab.isProvider());
-			System.out.println(collab.getArrivalDateOp());
-			System.out.println(collab.getLeftDateOp());
-			System.out.println(collab.getFkIdStatus());
-			System.out.println(collab.isDeleted());
-			
+		@PostMapping(path = "/insertRequest")
+		public String bigChange(@RequestBody Collaborateur collab) {	
 			service.addCollaborateur(collab.getId()+10000, collab.getName(), collab.getFirstname(), collab.getEmail(),collab.getArrivalDateOp(),
 					collab.getLeftDateOp(), collab.getCv(), collab.isProvider(), collab.getFkIdStatus(), collab.getComment(), collab.isDeleted());
 			return "TEST DE QUALIIITE";
