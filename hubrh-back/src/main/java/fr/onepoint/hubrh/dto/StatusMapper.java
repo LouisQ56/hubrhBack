@@ -12,7 +12,7 @@ import fr.onepoint.hubrh.model.Status;
 @Mapper(unmappedTargetPolicy = ReportingPolicy.ERROR, componentModel = "spring")
 public interface StatusMapper {
 	@Mapping(target = "pkIdStatus")
-	CollaborateurDto to(Status status);
+	StatusDto to(Status status);
 
 	List<StatusDto> to(List<Status> status);
 
